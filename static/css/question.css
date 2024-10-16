@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-SemiBold';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BareunBatang';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/korean-webfonts/1/orgs/othrs/kpa/BareunBatang/BareunBatangOTFM.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/orgs/othrs/kpa/BareunBatang/BareunBatangOTFM.woff') format('woff');
+}
+
+body{
+    background-color: #FFFFFF;
+}
+
+.menu-mypage{
+    font-family: 'Pretendard-Regular';
+    float: right;
+    opacity: 50%;
+    margin-top: -40px;
+    font-size: 20px;
+    margin-right: 90px;
+}
+
+.menu-mypage:hover{
+    cursor: pointer;
+}
+
+
+.menu-background{
+    display: flex;
+    margin: -10px;
+    justify-content: flex-start;
+    background-color: #F6F6F6;
+    width: 100%;
+    padding-right: 18px;
+    height: 75px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.menu-img{
+    width: 8%;
+    height: 10.5%;
+    margin-top: -70px;
+}
+
+.menu-img:hover{
+    cursor: pointer;
+}
+
+.menu-login{
+    font-family: 'Pretendard-Regular';
+    float: right;
+    opacity: 50%;
+    margin-top: -40px;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.menu-login:hover{
+    cursor: pointer;
+}
+
+.menu-category{
+    font-family: 'Pretendard-Regular';
+    float: left;
+    opacity: 50%;
+    margin-top: -40px;
+    font-size: 20px;
+    margin-left: 150px;
+}
+
+.menu-category:hover{
+    cursor: pointer;
+}
+
+.location{
+    margin: 20px;
+    font-size: 14px;
+    color: #888888;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px;
+}
+
+.image-section {
+    width: 40%;
+}
+
+.problem-img {
+    width: 100%;
+    border: 1px solid #888888;
+}
+
+.content-section {
+    width: 55%;
+}
+
+.horizontal-bar {
+    height: 0.5px;
+    width: 80%;
+    margin-left: 0px;
+    background-color: rgb(95, 95, 95);
+}
+
+.problem-title{
+    font-family: 'Pretendard-Bold';
+    font-size: 35px;
+}
+
+.problem-context{
+    font-family: 'Pretendard-Regular';
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    line-height: 2;
+    width: 80%;
+}
+
+.answer{
+    position: absolute;
+    bottom: 100px; 
+    font-family: 'Pretendard-Regular';
+    font-size: 20px; 
+}
+
+.problem-answer{
+    font-family: 'Pretendard-SemiBold';
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.answer-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.answer-input {
+    width: 550px;
+    height: 40px;
+    padding: 0 10px;
+    font-size: 16px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+.submit-btn {
+    width: 130px;
+    height: 40px;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.message {
+    margin-top: 10px;
+    font-size: 14px;
+}
+.correct {
+    color: #0066FF;
+}
+.wrong {
+    color: #F40D0D;
+}

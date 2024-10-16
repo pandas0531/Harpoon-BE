@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onsoo - 내 정보</title>
+    <link rel="stylesheet" href="/static/css/mypage.css">
+</head>
+<body>
+    {%with messages = get_flashed_messages()%}
+    {%if messages %}
+        <script type="text/javascript">
+        alert("{{messages[-1]}}");
+        </script>
+        {%endif%}
+    {%endwith%}
+    <nav>
+        <div class="menu-background"></div>
+        <img class="menu-img" onclick="location.href='/'" src="/static/img/Onsoo_Logo.png" alt="Onsoo - Logo">
+        {% if not islogin %}
+            <h1 class="menu-login" onclick="location.href='/login'">로그인</h1>
+        {% endif %}
+    </nav>
+
+    <section class="profile-section">
+        <div class="profile-header">
+            <div class="profile-info">
+                <h1>{{ userid }}</h1>
+            </div>
+        </div>
+
+        <div class="profile-stats">
+            <div class="stats-item">
+                <h2>맞힌 문제</h2>
+                <p>{{ correct_p }}</p>
+            </div>
+            <div class="stats-item">
+                <h2>틀린 문제</h2>
+                <p>{{ miss_p }}</p>
+            </div>
+            <div class="stats-item">
+                <h2>내 점수</h2>
+                <p>{{ my_score }}</p>
+            </div>
+            <div class="stats-item">
+                <h2>내 랭킹</h2>
+                <p>{{ my_ranking }}</p>
+            </div>
+        </div>
+
+        <div class="ranking-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>랭킹</th>
+                        <th>유저명</th>
+                        <th>점수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>120</td>
+                        <td>minji01</td>
+                        <td>523,523</td>
+                    </tr>
+                    <tr>
+                        <td>121</td>
+                        <td>ihatedimigo</td>
+                        <td>171,098</td>
+                    </tr>
+                    <tr>
+                        <td>122</td>
+                        <td>minhye08</td>
+                        <td>165,359</td>
+                    </tr>
+                    <tr class="highlighted">
+                        <td>123</td>
+                        <td>Pandas</td>
+                        <td>162,534</td>
+                    </tr>
+                    <tr>
+                        <td>124</td>
+                        <td>harpoonslave</td>
+                        <td>159,341</td>
+                    </tr>
+                    <tr>
+                        <td>125</td>
+                        <td>newjeanss</td>
+                        <td>146,984</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</body>
+</html>

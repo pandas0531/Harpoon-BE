@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-SemiBold';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    background-color: #FFFFFF;
+}
+
+.menu-mypage{
+    font-family: 'Pretendard-Regular';
+    float: right;
+    opacity: 50%;
+    margin-top: -40px;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.menu-mypage:hover{
+    cursor: pointer;
+}
+
+
+.menu-background{
+    display: flex;
+    margin: -10px;
+    justify-content: flex-start;
+    background-color: #F6F6F6;
+    width: 100%;
+    padding-right: 18px;
+    height: 75px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.menu-img{
+    width: 8%;
+    height: 10.5%;
+    margin-top: -70px;
+}
+
+.menu-img:hover{
+    cursor: pointer;
+}
+
+.menu-login:hover{
+    cursor: pointer;
+}
+
+.menu-login{
+    font-family: 'Pretendard-Regular';
+    float: right;
+    opacity: 50%;
+    margin-top: -40px;
+    font-size: 20px;
+    margin-right: 20px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.main-text{
+    font-family: "Pretendard-Bold";
+    font-size: 45px;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.horizontal-bar{
+    width: 144px;
+    align-items: center;
+}
+
+.user-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.id-input{
+    width: 500px;
+    height: 50px;
+    border-radius: 20px;
+
+    margin-top: 50px;
+    
+    text-align: left;
+    padding-left: 20px;
+
+    font-family: "Pretendard-Regular";
+    font-size: 18px;
+
+}
+
+.pw-input{
+    width: 500px;
+    height: 50px;
+    border-radius: 20px;
+
+    margin-top: 15px;
+    
+    text-align: left;
+    padding-left: 20px;
+    
+    font-family: "Pretendard-Regular";
+    font-size: 18px;
+}
+
+.check{
+    width: 530px;
+    height: 60px;
+    border-radius: 20px;
+
+    background-color: black;
+
+    margin-top: 50px;
+
+    text-align: left;
+
+    font-family: "Pretendard-SemiBold";
+    color: white;
+    text-align: center;
+    font-size: 25px;
+}
+
+.check:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    transition: 0.15s ease-in-out; 
+}
+
+.text{
+    font-family: "Pretendard-SemiBold";
+    color: #050505;
+    font-size: 12px;
+    
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.join{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    
+    font-family: "Pretendard-SemiBold";
+    font-size: 25px;
+    color: #000000;
+    
+}
+
+.join:hover{
+    cursor: pointer;
+}

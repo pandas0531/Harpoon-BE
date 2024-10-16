@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onsoo | Login/로그인</title>
+    <link href="/static/css/login.css" rel="stylesheet">
+</head>
+<body>
+    {%with messages = get_flashed_messages()%}
+    {%if messages %}
+        <script type="text/javascript">
+        alert("{{messages[-1]}}");
+        </script>
+        {%endif%}
+    {%endwith%}
+    <!--Menu Bar-->
+    <nav>
+        <div class="menu-background"></div>
+        <img class="menu-img" onclick="location.href='/'" src="/static/img/Onsoo_Logo.png" alt="Onsoo - Logo">
+        <h1 class="menu-mypage" onclick="location.href='/mypage'">마이페이지</h1>
+        <!-- <h1 class="menu-login" onclick="location.href='/templates/auth/login.html'">로그인</h1> -->
+        <!--css나 이미지에는 ../../로 경로로 지정해주자-->
+    </nav>
+    
+    <div class="container">
+        <div>
+            <h1 class="main-text">
+                로그인
+            </h1>
+            <hr class="horizontal-bar">
+        </div>
+        
+        <form action="/login" method="POST" class="user-input">
+            <div>
+                <input type="text" name="userid" class="id-input" placeholder="ID를 입력하세요" required>
+            </div>
+
+            <div>
+                <input type="password" name="password" class="pw-input" placeholder="PW를 입력하세요" required>
+            </div>
+            
+            <div>
+                <button type="submit" class="check">입력 완료</button>
+            </div>
+        </form>
+
+        <div>
+            <h1 class="text">
+                계정이 없으신가요?
+            </h1>
+
+            <a href="/join" class="join">회원가입 바로가기</a>
+        </div>
+    </div>
+
+</body>
+</html>

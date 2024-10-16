@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onsoo - Admin</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+    {%with messages = get_flashed_messages()%}
+    {%if messages %}
+        <script type="text/javascript">
+        alert("{{messages[-1]}}");
+        </script>
+        {%endif%}
+    {%endwith%}
+    <!-- Navbar -->
+    <nav>
+        <div class="menu-background"></div>
+        <img class="menu-img" onclick="location.href='/'" src="/static/img/Onsoo_Logo.png" alt="Onsoo - Logo">        
+    </nav>
+
+    <!-- Admin Form Section -->
+    <section class="admin-section">
+        <form class="admin-form">
+            <div class="form-group">
+                <label for="question-title">문제 제목</label>
+                <input type="text" id="question-title" placeholder="문제 제목을 입력하세요">
+            </div>
+            
+            <div class="form-group">
+                <label for="question-answer">문제 정답</label>
+                <input type="text" id="question-answer" placeholder="문제의 정답을 입력하세요">
+            </div>
+            
+            <div class="form-group">
+                <label for="question-content">문제 내용</label>
+                <textarea id="question-content" placeholder="문제 내용을 입력하세요"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="question-image">문제 이미지 업로드</label>
+                <input type="file" id="question-image" accept="image/*">
+                <div class="image-preview" id="image-preview">
+                    <span>이미지 미리보기</span>
+                    <img id="image-display" style="display:none; max-width: 100%; max-height: 100%;">
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">게시하기</button>
+        </form>
+    </section>
+
+    <script type="text/javascript" src="/static/js/admin.js"></script>
+</body>
+</html>

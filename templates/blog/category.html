@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onsoo - 문제 페이지</title>
+    <link href="/static/css/category.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/category.js"></script>
+</head>
+<body>
+    {%with messages = get_flashed_messages()%}
+    {%if messages %}
+        <script type="text/javascript">
+        alert("{{messages[-1]}}");
+        </script>
+        {%endif%}
+    {%endwith%}
+    <!-- <h1 id="category-title"></h1> --> 
+    <!-- 클릭시 여기에 클릭 한걸 보이게  -->
+
+    <!--Menu Bar-->
+    <nav>
+        <div class="menu-background"></div>
+        <img class="menu-img" onclick="location.href='/'" src="/static/img/Onsoo_Logo.png" alt="Onsoo - Logo">
+        {% if not islogin %}
+            <h1 class="menu-login" onclick="location.href='/login'">로그인</h1>
+        {% endif %}
+        <h1 class="menu-mypage" onclick="location.href='/mypage'">마이페이지</h1>
+        <!--css나 이미지에는 /로 경로로 지정해주자-->
+    </nav>
+
+    <div class="container">
+        
+        <h1 id="category-title" class="category-title">카테고리</h1>
+
+        <hr class="horizontal-bar">
+
+        <div class="question-table">
+            <div class="question-row">
+                <div class="question-number">#0000</div>
+                <div class="question-title">노짱의 달리기</div>
+                <div class="question-status correct">정답</div>
+            </div>
+            <div class="question-row">
+                <div class="question-number">#0001</div>
+                <div class="question-title">피아제 시계의 가격</div>
+                <div class="question-status pending">미해결</div>
+            </div>
+            <div class="question-row">
+                <div class="question-number">#0002</div>
+                <div class="question-title">뽀삐의 산책</div>
+                <div class="question-status pending">미해결</div>
+            </div>
+            <div class="question-row">
+                <div class="question-number">#0003</div>
+                <div class="question-title">부엉이 바위의 높이</div>
+                <div class="question-status pending">미해결</div>
+            </div>
+            <div class="question-row">
+                <div class="question-number">#0004</div>
+                <div class="question-title">이걸 틀리냐ㅋㅋ</div>
+                <div class="question-status wrong">오답</div>
+            </div>
+            <div class="question-row">
+                <div class="question-number">#0005</div>
+                <div class="question-title">M군의 리잠</div>
+                <div class="question-status pending">미해결</div>
+            </div>
+            <div class="question-row">
+                <div class="question-number">#0006</div>
+                <div class="question-title">철수의 달력은 또 찢어졌다..</div>
+                <div class="question-status pending">미해결</div>
+            </div>
+            <div class="question-row">
+                <div class="question-number">#0007</div>
+                <div class="question-title">몰루?</div>
+                <div class="question-status pending">미해결</div>
+            </div>
+            <div class="question-row">
+                <div class="question-number">#0008</div>
+                <div class="question-title">철수의 달력은 또 찢어졌다..</div>
+                <div class="question-status pending">미해결</div>
+            </div>
+            <div class="question-row">
+                <div class="question-number">#0009</div>
+                <div class="question-title">철수의 달력은 또 찢어졌다..</div>
+                <div class="question-status pending">미해결</div>
+            </div>
+        </div>
+        
+
+    </div>
+
+</body>
+</html>

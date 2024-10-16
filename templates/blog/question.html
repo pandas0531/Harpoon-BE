@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onsoo - 문제 페이지</title>
+    <link href="/static/css/question.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/question.js"></script>
+</head>
+<body>
+    {%with messages = get_flashed_messages()%}
+    {%if messages %}
+        <script type="text/javascript">
+        alert("{{messages[-1]}}");
+        </script>
+        {%endif%}
+    {%endwith%}
+    <!-- Header -->
+    <nav>
+        <div class="menu-background"></div>
+        <img class="menu-img" onclick="location.href='/'" src="/static/img/Onsoo_Logo.png" alt="Onsoo - Logo">
+        {% if not islogin %}
+            <h1 class="menu-login" onclick="location.href='/login'">로그인</h1>
+        {% endif %}
+        <h1 class="menu-mypage" onclick="location.href='/mypage'">마이페이지</h1>
+        <h1 class="menu-category" id="menu-category">카테고리</h1>
+
+    </nav>
+
+    <h1 id="location" class="location">temp</h1>
+    <div class="container">
+
+        <div class="image-section">
+            <img src="/static/img/problem.png" alt="문제 이미지" class="problem-img">
+        </div>
+
+        <div class="content-section">
+            <h1 class="problem-title">철수와 영희의 달리기</h1>
+
+            <hr class="horizontal-bar">
+
+            <p class="problem-context">철수와 영희는 오른쪽과 같은 운동장에서 달리기 경주를 하려고 한다.<br>
+               철수는 A지점부터 10km/h의 속도로 영희보다 30초 먼저 출발하고,<br>
+               영희는 B지점부터 철수보다 30초 뒤에 9.5km/h의 속도로 달리기 시작한다고 할 때 몇 초 뒤에 철수와 영희가 만나는가?</p>
+
+            <hr class="horizontal-bar">
+            
+            <div class="answer">
+                <h3 class="problem-answer">답안 입력</h3>
+            
+                <form class="answer-form">
+                    <input type="text" placeholder="답안을 입력하세요" class="answer-input">
+                    <button type="submit" class="submit-btn">제출</button>
+                </form>
+                <div class="message" id="feedback"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

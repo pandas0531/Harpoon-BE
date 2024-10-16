@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-SemiBold';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    background-color: #FFFFFF;
+}
+
+.menu-mypage{
+    font-family: 'Pretendard-Regular';
+    float: right;
+    opacity: 50%;
+    margin-top: -40px;
+    font-size: 20px;
+    margin-right: 90px;
+}
+
+.menu-mypage:hover{
+    cursor: pointer;
+}
+
+
+.menu-background{
+    display: flex;
+    margin: -10px;
+    justify-content: flex-start; 
+    background-color: #F6F6F6;
+    width: 100%;
+    padding-right: 18px;
+    height: 75px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.menu-img{
+    width: 8%;
+    height: 10.5%;
+    margin-top: -70px;
+}
+
+.menu-img:hover{
+    cursor: pointer;
+}
+
+.menu-login{
+    font-family: 'Pretendard-Regular';
+    float: right;
+    opacity: 50%;
+    margin-top: -40px;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.menu-login:hover{
+    cursor: pointer;
+}
+
+.profile-section {
+    margin: 50px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.profile-info h1 {
+    font-size: 50px;
+    margin-left: 20px;
+    margin-top: -10px;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.stats-item {
+    text-align: center;
+}
+
+.stats-item h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #777;
+}
+
+.stats-item p {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+.ranking-table {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.ranking-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ranking-table th, .ranking-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.ranking-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.ranking-table td {
+    font-size: 18px;
+}
+
+.highlighted {
+    font-weight: bold;
+    background-color: #EAEAEA;
+}

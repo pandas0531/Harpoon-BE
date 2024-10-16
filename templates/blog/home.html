@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onsoo | Home/메인</title>
+    <link href="/static/css/home.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/home.js"></script>
+</head>
+<body>
+    {%with messages = get_flashed_messages()%}
+    {%if messages %}
+        <script type="text/javascript">
+        alert("{{messages[-1]}}");
+        </script>
+        {%endif%}
+    {%endwith%}
+    <!--Menu Bar-->
+    <nav>
+        <div class="menu-background"></div>
+        <img class="menu-img" onclick="location.href='/'" src="/static/img/Onsoo_Logo.png" alt="Onsoo - Logo">
+        {% if not islogin %}
+            <h1 class="menu-login" onclick="location.href='/login'">로그인</h1>
+        {% endif %}
+        <h1 class="menu-mypage" onclick="location.href='/mypage'">마이페이지</h1>
+        <!--css나 이미지에는 ../../로 경로로 지정해주자-->
+    </nav>
+
+    <div class="container">
+        <div class="text-top">
+            <h1 class="text-category">카테고리</h1>
+            <h1 class="text-problem">오늘의 문제</h1>
+        </div>    
+
+        <hr class="horizontal-bar">
+
+        <div class="category-grid">
+            <div class="category-text" onclick = "goToCategory('사칙연산')" >#사칙연산</div>
+            <div class="category-text" onclick = "goToCategory('중등 수학')" >#중등 수학</div>
+            <div class="category-text" onclick = "goToCategory('수(상)')" >#수(상)</div>
+            <div class="category-text" onclick = "goToCategory('수(하)')" >#수(하)</div>
+            <div class="category-text" onclick = "goToCategory('수1')" >#수1</div>
+            <div class="category-text" onclick = "goToCategory('수2')" >#수2</div>
+            <div class="category-text" onclick = "goToCategory('미분')" >#미분</div>
+            <div class="category-text" onclick = "goToCategory('적분')" >#적분</div>
+            <div class="category-text" onclick = "goToCategory('모고 3점')" >#모고 3점</div>
+            <div class="category-text" onclick = "goToCategory('모고 4점')" >#모고 4점</div>
+            <div class="category-text" onclick = "goToCategory('킬러')" >#킬러</div>
+            <div class="category-text" onclick = "goToCategory('전체')">#전체 문제</div>
+        </div>
+
+        <hr class="vertical-bar">
+
+
+        <div class="problem-recom-container">
+            <div class="problem-recom-easy">
+                <h1 class="problem-recom-title">기본</h1>
+                <div class="problem-recom-box" onclick="alert('기본')">
+                    <h2 class="problem-title">간단한 덧셈과 뺄셈</h2>
+                    <p class="problem-description"">아주 간단한 덧셈과 뺄셈을 활용하여 문제를 해결해 보십시오.</p>
+                </div>
+            </div>
+            <div class="problem-recom-hard">
+                <h1 class="problem-recom-title">실력</h1>
+                <div class="problem-recom-box" onclick="alert('실력')">
+                    <h2 class="problem-title">아주 어려운 미적분</h2>
+                    <p class="problem-description">아주 어려운 미적분 문제입니다. 배운 내용을 열심히 활용해 보세요!</p>
+                </div>
+            </div>
+        </div>
+        
+
+
+    </div>
+
+</body>
