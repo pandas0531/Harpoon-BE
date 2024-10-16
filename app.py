@@ -48,7 +48,9 @@ def auth_admin():
 @app.route('/mypage', methods=['GET'])
 def auth_mypage():
     if session.get('userid'):
-        return render_template('auth/mypage.html', islogin=True, userid=session.get('userid'), )
+        print(session.get('userid'))
+        user = User.query.filter_by(userid=session.get('userid')).first()
+        return render_template('auth/mypage.html', islogin=True, userid=user.userid, correct_p=user.correct_p, miss_p=user.miss_p, my_score=user.my_score)
     else:
         flash('로그인이 필요합니다.')
         return redirect('auth/login.html')
@@ -98,8 +100,7 @@ def auth_login():
         if user.password == hashlib.sha512(str(password).encode('utf-8')).hexdigest():
             if user.isadmin:
                 session['isadmin'] = True
-            session['user'] = user
-            print(session['user'])
+            session['userid'] = user.userid
             return redirect('/')
         else:
             flash('존재하지 않는 ID이거나 비밀번호가 일치하지 않습니다.')
