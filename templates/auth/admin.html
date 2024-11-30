@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="/static/css/admin.css">
 </head>
 <body>
-    {%with messages = get_flashed_messages()%}
-    {%if messages %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
         <script type="text/javascript">
-        alert("{{messages[-1]}}");
+        alert("{{ messages[-1] }}");
         </script>
-        {%endif%}
-    {%endwith%}
+    {% endif %}
+    {% endwith %}
     <!-- Navbar -->
     <nav>
         <div class="menu-background"></div>
@@ -22,32 +22,51 @@
 
     <!-- Admin Form Section -->
     <section class="admin-section">
-        <form class="admin-form">
+        <form class="admin-form" method="POST" action="{{ url_for('auth_admin') }}" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
             <div class="form-group">
-                <label for="question-title">문제 제목</label>
-                <input type="text" id="question-title" placeholder="문제 제목을 입력하세요">
+                {{ form.title.label }}<br>
+                {{ form.title(size=32) }}<br>
+                {% for error in form.title.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
             </div>
             
             <div class="form-group">
-                <label for="question-answer">문제 정답</label>
-                <input type="text" id="question-answer" placeholder="문제의 정답을 입력하세요">
+                {{ form.description.label }}<br>
+                {{ form.description(rows=5) }}<br>
+                {% for error in form.description.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
             </div>
             
             <div class="form-group">
-                <label for="question-content">문제 내용</label>
-                <textarea id="question-content" placeholder="문제 내용을 입력하세요"></textarea>
+                {{ form.file.label }}<br>
+                {{ form.file() }}<br>
+                {% for error in form.file.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
             </div>
             
             <div class="form-group">
-                <label for="question-image">문제 이미지 업로드</label>
-                <input type="file" id="question-image" accept="image/*">
-                <div class="image-preview" id="image-preview">
-                    <span>이미지 미리보기</span>
-                    <img id="image-display" style="display:none; max-width: 100%; max-height: 100%;">
-                </div>
+                {{ form.category.label }}<br>
+                {{ form.category() }}<br>
+                {% for error in form.category.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
             </div>
             
-            <button type="submit" class="submit-btn">게시하기</button>
+            <div class="form-group">
+                {{ form.difficulty.label }}<br>
+                {{ form.difficulty() }}<br>
+                {% for error in form.difficulty.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            
+            <div class="form-group">
+                {{ form.submit() }}
+            </div>
         </form>
     </section>
 

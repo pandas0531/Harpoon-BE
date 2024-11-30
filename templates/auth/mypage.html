@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="/static/css/mypage.css">
 </head>
 <body>
-    {%with messages = get_flashed_messages()%}
-    {%if messages %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
         <script type="text/javascript">
-        alert("{{messages[-1]}}");
+        alert("{{ messages[-1] }}");
         </script>
-        {%endif%}
-    {%endwith%}
+    {% endif %}
+    {% endwith %}
     <nav>
         <div class="menu-background"></div>
         <img class="menu-img" onclick="location.href='/'" src="/static/img/Onsoo_Logo.png" alt="Onsoo - Logo">
@@ -32,19 +32,23 @@
         <div class="profile-stats">
             <div class="stats-item">
                 <h2>맞힌 문제</h2>
-                <p>{{ correct_p }}</p>
+                <ul>
+                    {% for problem in correct_problems %}
+                    <li>{{ correct_problems|length }}</li>
+                    {% endfor %}
+                </ul>
             </div>
             <div class="stats-item">
                 <h2>틀린 문제</h2>
-                <p>{{ miss_p }}</p>
+                <ul>
+                    {% for problem in incorrect_problems %}
+                    <li>{{ incorrect_problems|length }}</li>
+                    {% endfor %}
+                </ul>
             </div>
             <div class="stats-item">
                 <h2>내 점수</h2>
                 <p>{{ my_score }}</p>
-            </div>
-            <div class="stats-item">
-                <h2>내 랭킹</h2>
-                <p>{{ my_ranking }}</p>
             </div>
         </div>
 
@@ -92,6 +96,5 @@
             </table>
         </div>
     </section>
-
 </body>
 </html>

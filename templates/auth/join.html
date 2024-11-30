@@ -1,3 +1,4 @@
+<!-- /templates/auth/join.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,50 +9,50 @@
 </head>
 <body>
     <!--Menu Bar-->
-    {%with messages = get_flashed_messages()%}
-    {%if messages %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
         <script type="text/javascript">
-        alert("{{messages[-1]}}");
+        alert("{{ messages[-1] }}");
         </script>
-        {%endif%}
-    {%endwith%}
+    {% endif %}
+    {% endwith %}
     <nav>
         <div class="menu-background"></div>
         <img class="menu-img" onclick="location.href='/'" src="/static/img/Onsoo_Logo.png" alt="Onsoo - Logo">
         <h1 class="menu-mypage" onclick="location.href='/mypage'">마이페이지</h1>
     </nav>
 
-    <h1 class="main-text">
-        회원가입
-    </h1>
-
+    <h1 class="main-text">회원가입</h1>
     <hr class="horizontal-bar">
 
     <div class="container">
-        <!-- Create a form that submits data via POST -->
-        <form action="/join" method="POST">
+        <form method="POST" action="{{ url_for('auth_join') }}">
+            {{ form.hidden_tag() }}
             <div>
-                <div>
-                    <h1 class="text">아이디</h1>
-                    <input type="text" name="userid" class="input" placeholder="ID 입력">
-                </div>
-
-                <div>
-                    <h1 class="text">비밀번호 입력</h1>
-                    <input type="password" name="password" class="input" placeholder="PW를 입력하세요" required>
-                </div>
+                {{ form.userid.label }}<br>
+                {{ form.userid(size=32) }}<br>
+                {% for error in form.userid.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
             </div>
-
             <div>
-                <h1 class="text">비밀번호 확인</h1>
-                <input type="password" name="confirm_password" class="input" placeholder="PW를 입력하세요" required>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32) }}<br>
+                {% for error in form.password.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
             </div>
-
             <div>
-                <button type="submit" class="check">회원 가입</button>
+                {{ form.confirm_password.label }}<br>
+                {{ form.confirm_password(size=32) }}<br>
+                {% for error in form.confirm_password.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.submit() }}
             </div>
         </form>
     </div>
-
 </body>
 </html>
