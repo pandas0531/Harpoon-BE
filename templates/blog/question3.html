@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onsoo - 문제 페이지</title>
+    <link href="/static/css/question.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/question.js"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* 선택지 번호 스타일링 */
+        .choices {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .choices li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .choice-number {
+            font-weight: bold;
+            font-size: 1.4em;
+            color: #007BFF;
+            margin-right: 10px;
+        }
+
+        .horizontal-bar {
+            margin: 20px 0;
+            border: none;
+            border-top: 2px solid #ddd;
+        }
+
+        .problem-context {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <script type="text/javascript">
+                alert("{{ messages[-1] }}");
+            </script>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Header -->
+    <nav>
+        <div class="menu-background"></div>
+        <img class="menu-img" onclick="location.href='/'" src="/static/img/Onsoo_Logo.png" alt="Onsoo - Logo">
+        {% if not islogin %}
+            <h1 class="menu-login" onclick="location.href='/login'">로그인</h1>
+        {% endif %}
+        <h1 class="menu-mypage" onclick="location.href='/mypage'">마이페이지</h1>
+        <h1 class="menu-category" id="menu-category">카테고리</h1>
+    </nav>
+
+    <h1 id="location" class="location">수(상) > 복소수</h1>
+    <div class="container">
+
+        <div class="image-section">
+            <img src="/static/img/no-problem.png" alt="문제 이미지" class="problem-img">
+        </div>
+
+        <div class="content-section">
+            <h1 class="problem-title">복소수</h1>
+            <hr class="horizontal-bar">
+
+            <p class="problem-context">
+                복소수 \( z \)에 대하여 \( \frac{z - \overline{z}}{i} \) 가 음수이고 
+                \( \frac{z}{1 + z^2} \) 와 \( \frac{z^2}{1 + z^2} \) 이 모두 실수일 때, \( z \)의 값은?
+            </p>
+
+            <ul class="choices">
+                <li>
+                    <span class="choice-number">①</span> 
+                    <span>\( \frac{1}{2} - \frac{\sqrt{3}}{2} i \)</span>
+                </li>
+                <li>
+                    <span class="choice-number">②</span> 
+                    <span>\( \frac{1}{2} + \frac{\sqrt{3}}{2} i \)</span>
+                </li>
+                <li>
+                    <span class="choice-number">③</span> 
+                    <span>\( -\frac{\sqrt{3}}{2} + \frac{i}{2} \)</span>
+                </li>
+                <li>
+                    <span class="choice-number">④</span> 
+                    <span>\( -\frac{1}{2} + \frac{\sqrt{3}}{2} i \)</span>
+                </li>
+                <li>
+                    <span class="choice-number">⑤</span> 
+                    <span>\( \frac{\sqrt{3}}{2} - \frac{i}{2} \)</span>
+                </li>
+            </ul>
+
+            <hr class="horizontal-bar">
+            
+            <div class="answer">
+                <h3 class="problem-answer">답안 입력</h3>
+                <form class="answer-form">
+                    <input type="text" placeholder="답안을 입력하세요" class="answer-input">
+                    <button type="submit" class="submit-btn">제출</button>
+                </form>
+                <div class="message" id="feedback"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

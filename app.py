@@ -120,13 +120,7 @@ def auth_mypage():
 
 @app.route('/category/<category_name>', methods=['GET'])
 def blog_category(category_name):
-    category = ProblemCategory.query.filter_by(name=category_name).first()
-    if not category:
-        flash('해당 카테고리를 찾을 수 없습니다.')
-        return redirect(url_for('index'))
-    
-    problems = category.problems
-    return render_template('blog/category.html', category=category, problems=problems, islogin=session.get('userid') is not None)
+    return render_template(f'blog/question{category_name}.html')
 
 @app.route('/', methods=['GET'])
 def index():

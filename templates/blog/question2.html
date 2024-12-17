@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onsoo - 문제 페이지</title>
+    <link href="/static/css/question.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/question.js"></script>
+    <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    {%with messages = get_flashed_messages()%}
+    {%if messages %}
+        <script type="text/javascript">
+        alert("{{messages[-1]}}");
+            </script>
+            {%endif%}
+    {%endwith%}
+    <!-- Header -->
+    <nav>
+        <div class="menu-background"></div>
+        <img class="menu-img" onclick="location.href='/'" src="/static/img/Onsoo_Logo.png" alt="Onsoo - Logo">
+        {% if not islogin %}
+            <h1 class="menu-login" onclick="location.href='/login'">로그인</h1>
+        {% endif %}
+        <h1 class="menu-mypage" onclick="location.href='/mypage'">마이페이지</h1>
+        <h1 class="menu-category" id="menu-category">카테고리</h1>
+
+    </nav>
+
+    <h1 id="location" class="location">중학 수학 > 이차함수</h1>
+    <div class="container">
+
+        <div class="image-section">
+            <img src="/static/img/question2.png" alt="문제 이미지" class="problem-img">
+        </div>
+
+        <div class="content-section">
+            <h1 class="problem-title">이차함수</h1>
+
+            <hr class="horizontal-bar">
+
+            <p class="problem-context">
+                \( \overline{\text{AB}} = 1 \)일 때, 점 A의 \( x \)좌표와 \( y \)좌표의 합은?
+            </p>
+
+            <hr class="horizontal-bar">
+            
+            <div class="answer">
+                <h3 class="problem-answer">답안 입력</h3>
+            
+                <form class="answer-form">
+                    <input type="text" placeholder="답안을 입력하세요" class="answer-input">
+                    <button type="submit" class="submit-btn">제출</button>
+                </form>
+                <div class="message" id="feedback"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
