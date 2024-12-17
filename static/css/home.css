@@ -199,17 +199,9 @@ body{
     border-radius: 20px;
     padding: 15px;
     padding-bottom: 50px;
-    background-color: #cbcbcb;
+    /* background-color: #cbcbcb; */
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
 }
-
-.problem-recom-box:hover{
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.15);
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 1);
-    transition: 0.5s ease-in-out; 
-}
-
 .problem-title {
     font-family: "Pretendard-SemiBold";
     font-size: 20px;
